@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
+
 
 // In-memory data store
 let animals = [
@@ -30,7 +32,7 @@ app.post('/api/animals', (req, res) => {
   res.status(201).json(animal);
 });
 
-// Direct purchase of an animal
+
 app.post('/api/animals/:id/buy', (req, res) => {
   const id = Number(req.params.id);
   const index = animals.findIndex(a => a.id === id);
@@ -39,6 +41,11 @@ app.post('/api/animals/:id/buy', (req, res) => {
   }
   const [animal] = animals.splice(index, 1);
   res.json(animal);
+
+// Simple health check
+app.get('/', (req, res) => {
+  res.send('Viehhandel API running');
+
 });
 
 const PORT = process.env.PORT || 3000;
