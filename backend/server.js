@@ -32,6 +32,7 @@ app.post('/api/animals', (req, res) => {
   res.status(201).json(animal);
 });
 
+
 // Simple health check
 app.get('/', (req, res) => {
   res.send('Viehhandel API running');
