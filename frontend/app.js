@@ -37,7 +37,7 @@ function App() {
   const [animals, setAnimals] = useState([]);
 
   const loadAnimals = () => {
-    fetch('/api/animals')
+      fetch('http://localhost:3000/api/animals')
       .then(res => res.json())
       .then(setAnimals);
   };
@@ -47,13 +47,13 @@ function App() {
   }, []);
 
   const addAnimal = animal => {
-    fetch('/api/animals', {
+    fetch('http://localhost:3000/api/animals', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(animal)
     })
       .then(res => res.json())
-      .then(newAnimal => setAnimals(prev => [...prev, newAnimal]));
+      .then(newAnimal => setAnimals([...animals, newAnimal]));
   };
 
   return (

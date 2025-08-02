@@ -5,12 +5,17 @@ Dieses Repository enthält ein einfaches Beispiel für eine Plattform zum Handel
 ## Starten
 
 ### Backend & Frontend
+
 ```
 cd backend
 npm install
 npm start
 ```
-Der Server liefert anschließend das Frontend unter http://localhost:3000 aus.
+
+Der Server läuft anschließend unter http://localhost:3000.
+
+### Frontend
+Öffne die Datei `frontend/index.html` im Browser. Das Frontend kommuniziert mit dem Backend.
 
 ## Hinweis
 Dies ist nur ein Minimalbeispiel zur Demonstration der Architektur (React + Express) und bildet nicht alle Funktionen der Spezifikation ab.
