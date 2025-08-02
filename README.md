@@ -4,12 +4,14 @@ Dieses Repository enthält ein einfaches Beispiel für eine Plattform zum Handel
 
 ## Starten
 
-### Backend
+### Backend & Frontend
+
 ```
 cd backend
 npm install
 npm start
 ```
+
 Der Server läuft anschließend unter http://localhost:3000.
 
 ### Frontend

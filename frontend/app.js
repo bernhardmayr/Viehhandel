@@ -37,7 +37,7 @@ function App() {
   const [animals, setAnimals] = useState([]);
 
   const loadAnimals = () => {
-    fetch('http://localhost:3000/api/animals')
+      fetch('http://localhost:3000/api/animals')
       .then(res => res.json())
       .then(setAnimals);
   };
@@ -58,6 +58,7 @@ function App() {
 
   return (
     <div>
+      <h2>Aktuelle Tiere</h2>
       <AnimalList animals={animals} />
       <AddAnimalForm onAdd={addAnimal} />
     </div>
