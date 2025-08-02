@@ -33,9 +33,19 @@ app.post('/api/animals', (req, res) => {
 });
 
 
+app.post('/api/animals/:id/buy', (req, res) => {
+  const id = Number(req.params.id);
+  const index = animals.findIndex(a => a.id === id);
+  if (index === -1) {
+    return res.status(404).json({ message: 'animal not found' });
+  }
+  const [animal] = animals.splice(index, 1);
+  res.json(animal);
+
 // Simple health check
 app.get('/', (req, res) => {
   res.send('Viehhandel API running');
+
 });
 
 const PORT = process.env.PORT || 3000;

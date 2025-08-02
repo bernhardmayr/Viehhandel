@@ -19,6 +19,8 @@ Dies ist nur ein Minimalbeispiel zur Demonstration der Architektur (React + Expr
 
 ## Erklärung
 Der Prototyp umfasst derzeit lediglich eine sehr einfache Tierverwaltung:
-- Das Express-Backend stellt die Endpunkte `GET /api/animals` und `POST /api/animals` bereit und speichert die Daten nur im Arbeitsspeicher.
-- Das React-Frontend (geladen über ein CDN) zeigt die vorhandenen Tiere an und bietet ein Formular zum Hinzufügen neuer Angebote.
+
+- Das Express-Backend stellt die Endpunkte `GET /api/animals`, `POST /api/animals` und `POST /api/animals/:id/buy` bereit und speichert die Daten nur im Arbeitsspeicher.
+- Das React-Frontend (geladen über ein CDN) zeigt die vorhandenen Tiere an, bietet ein Formular zum Hinzufügen neuer Angebote und ermöglicht den Direktkauf eines Tieres per Klick mit Bestätigung.
+
 Die Einträge sind nicht persistent und werden bei einem Neustart des Servers zurückgesetzt.

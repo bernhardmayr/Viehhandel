@@ -1,10 +1,21 @@
 const { useState, useEffect } = React;
 
+
+function AnimalList({ animals, onBuy }) {
+  return (
+    <ul>
+      {animals.map(a => (
+        <li key={a.id}>
+          {a.type} {a.name} - {a.price}€
+          <button onClick={() => onBuy(a.id)}>Kaufen</button>
+        </li>
+
 function AnimalList({ animals }) {
   return (
     <ul>
       {animals.map(a => (
         <li key={a.id}>{a.type} {a.name} - {a.price}€</li>
+
       ))}
     </ul>
   );
@@ -58,10 +69,17 @@ function App() {
       .then(newAnimal => setAnimals(prev => [...prev, newAnimal]));
   };
 
+  const buyAnimal = id => {
+    if (!window.confirm('Direktkauf bestätigen?')) return;
+    fetch(`/api/animals/${id}/buy`, { method: 'POST' })
+      .then(() => loadAnimals());
+  };
+
   return (
     <div>
       <h2>Aktuelle Tiere</h2>
-      <AnimalList animals={animals} />
+      <AnimalList animals={animals} onBuy={buyAnimal} />
+
       <AddAnimalForm onAdd={addAnimal} />
     </div>
   );
