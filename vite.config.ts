@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// base MUSS dem Repo-Namen entsprechen (Project-Site):
-// https://bernhardmayr.github.io/viehhandel/
+// Relativer Base-Pfad ('./') => Assets werden relativ geladen und funktionieren
+// unter jeder Project-Site-URL, unabhängig von Groß-/Kleinschreibung des Repo-Namens
+// (z.B. /Viehhandel/ oder /viehhandel/). Mit HashRouter bleibt das Dokument immer
+// auf der index.html, daher lösen relative Pfade korrekt auf.
 export default defineConfig({
   plugins: [react()],
-  base: '/viehhandel/',
+  base: './',
 });

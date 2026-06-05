@@ -3,7 +3,7 @@
 **Sicher handeln statt nur inserieren.** Eine Online-Handelsplattform für Rinder und Kälber –
 gebaut mit React + Vite + TypeScript und automatisch auf **GitHub Pages** deployt.
 
-> Live-Demo (nach Aktivierung von Pages): **https://bernhardmayr.github.io/viehhandel/**
+> Live-Demo (nach Aktivierung von Pages): **https://bernhardmayr.github.io/Viehhandel/**
 
 ## Alleinstellungsmerkmal (USP)
 
@@ -45,7 +45,7 @@ Dinge, die reine Börsen nicht bieten:
 
 ```bash
 npm install
-npm run dev        # Entwicklung (http://localhost:5173/viehhandel/)
+npm run dev        # Entwicklung (http://localhost:5173/)
 npm run build      # Produktions-Build nach dist/
 npm run preview    # gebaute App lokal testen
 ```
@@ -62,7 +62,8 @@ Der Workflow `.github/workflows/deploy.yml` baut die App und deployt sie automat
 
 **Einmalige manuelle Aktivierung:**
 1. GitHub → Repo **Settings → Pages → Build and deployment → Source: „GitHub Actions"**.
-2. Repo-Name muss `viehhandel` lauten (sonst `base` in `vite.config.ts` anpassen).
+2. Der relative Base-Pfad (`base: './'` in `vite.config.ts`) funktioniert unter jeder
+   Project-Site-URL – unabhängig von der Groß-/Kleinschreibung des Repo-Namens.
 3. Der Workflow läuft auf den Branches `main` und `claude/viehandel-ecommerce-site-PP3tE`.
    Ggf. unter **Settings → Environments → github-pages** die Deployment-Branch-Policy erweitern.
 
